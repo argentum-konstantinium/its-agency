@@ -1,0 +1,152 @@
+{
+    "product-1": {
+        "img": "prod-1.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 6000,
+        "newest": true,
+        "availability": true,
+        "contract": false,
+        "exclusive": false,
+        "sale": true
+    },
+    "product-2": {
+        "img": "prod-2.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 4800,
+        "newest": true,
+        "availability": true,
+        "contract": true,
+        "exclusive": false,
+        "sale": true
+    },
+    "product-3": {
+        "img": "prod-3.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 5290,
+        "newest": true,
+        "availability": false,
+        "contract": true,
+        "exclusive": true,
+        "sale": false
+    },
+    "product-4": {
+        "img": "prod-4.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 2800,
+        "newest": true,
+        "availability": false,
+        "contract": false,
+        "exclusive": true,
+        "sale": true
+    },
+    "product-5": {
+        "img": "prod-5.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 3400,
+        "newest": false,
+        "availability": false,
+        "contract": false,
+        "exclusive": true,
+        "sale": false
+    },
+    "product-6": {
+        "img": "prod-6.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 6000,
+        "newest": true,
+        "availability": true,
+        "contract": false,
+        "exclusive": true,
+        "sale": false
+    },
+    "product-7": {
+        "img": "prod-7.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 4800,
+        "newest": false,
+        "availability": true,
+        "contract": false,
+        "exclusive": true,
+        "sale": false
+    },
+    "product-8": {
+        "img": "prod-8.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 5290,
+        "newest": false,
+        "availability": false,
+        "contract": true,
+        "exclusive": false,
+        "sale": false
+    },
+    "product-9": {
+        "img": "prod-9.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 2800,
+        "newest": false,
+        "availability": true,
+        "contract": false,
+        "exclusive": false,
+        "sale": true
+    },
+    "product-10": {
+        "img": "prod-10.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 3400,
+        "newest": true,
+        "availability": false,
+        "contract": false,
+        "exclusive": true,
+        "sale": false
+    },
+    "product-11": {
+        "img": "prod-11.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 6000,
+        "newest": true,
+        "availability": true,
+        "contract": true,
+        "exclusive": true,
+        "sale": true
+    },
+    "product-12": {
+        "img": "prod-12.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 4800,
+        "newest": false,
+        "availability": false,
+        "contract": true,
+        "exclusive": false,
+        "sale": true
+    },
+    "product-13": {
+        "img": "prod-13.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 5290,
+        "newest": true,
+        "availability": false,
+        "contract": false,
+        "exclusive": true,
+        "sale": true
+    },
+    "product-14": {
+        "img": "prod-14.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 2800,
+        "newest": true,
+        "availability": false,
+        "contract": true,
+        "exclusive": true,
+        "sale": true
+    },
+    "product-15": {
+        "img": "prod-15.png",
+        "name": "Краска Wallquest, Brownsone MS90102",
+        "cost": 3400,
+        "newest": false,
+        "availability": false,
+        "contract": false,
+        "exclusive": false,
+        "sale": true
+    }
+}

@@ -41,7 +41,9 @@ export default {
       '~/components/header',
       '~/components/main',
       '~/components/main/promo-slider',
-      '~/components/main/aside'
+      '~/components/main/aside',
+      '~/components/main/products'
+
 
 
     ]

@@ -17,7 +17,7 @@ export default {
     &__link
         display: block
         &_phone
-            @include fontCfg(16px, 100%, 500)
+            @include fontCfg(16px, 100%, 500, -0.02em)
         &_text
             @include fontCfg(14px, 100%, 400)
             opacity: 0.3

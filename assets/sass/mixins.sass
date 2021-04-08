@@ -9,10 +9,11 @@
     flex-wrap: $fw
     align-content: $ac
 
-@mixin fontCfg($fs, $lh, $fw: 400)
+@mixin fontCfg($fs, $lh, $fw: 400, $ls: 0.06em)
     font-size: $fs
     line-height: $lh
     font-weight: $fw
+    letter-spacing: $ls
 @mixin invisibleCheckbox
     width: 1px
     height: 1px
@@ -22,3 +23,10 @@
     border: 0
     padding: 0
     margin: -1px
+@mixin productCardBorder
+    .product-card_border_active
+        @for $i from 1 through 5
+            &-#{$i}
+                &:nth-last-child(n+#{$i + 1})
+                    border-bottom: 1px rgba(0, 0, 0, 0.1) solid
+            

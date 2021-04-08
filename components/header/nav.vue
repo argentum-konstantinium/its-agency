@@ -21,7 +21,7 @@ export default {
 .nav
     &__list
         @include dFlex(flex-start, center)
-        @include fontCfg(14px, 125%)
+        @include fontCfg(14px, 125%, 400)
         text-transform: uppercase
         
     &__item

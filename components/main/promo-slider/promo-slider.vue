@@ -74,7 +74,7 @@ export default {
                 pagination: true,
             },
             elemsClass: {
-                slider: "promo-slider",
+                slider: "promo-slider products__promo-slider",
                 slides: {
                     active: "promo-slider__slide_active",
                 },
@@ -177,10 +177,10 @@ export default {
         flex-direction: column
         font-size: 72px
     &__headline
-        @include fontCfg(1em, 88%, normal)
+        @include fontCfg(1em, 88%, normal, -0.02em)
     &__descr
         margin-top: 1.5em
         max-width: 29.5em
         text-align: center
-        @include fontCfg(0.222222em, 130%, 500)
+        @include fontCfg(0.222222em, 130%, 500, 0.02em)
 </style>
