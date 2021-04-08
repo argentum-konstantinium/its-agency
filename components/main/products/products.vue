@@ -21,7 +21,7 @@
 export default {
     data() {
         return {
-            products: fetch("/products.json").then((response) => {
+            products: fetch("./products.json").then((response) => {
                 response.json().then((data) => {
                     let arr = [];
                     for (let i in data) {

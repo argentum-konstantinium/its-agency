@@ -9,7 +9,7 @@ export default {
   head: {
     title: 'test-task',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
@@ -77,7 +77,6 @@ export default {
         }
       }
     },
-    vendor: ['focus-visible']
   },
   router: {
     base: '/test-itagency/'
