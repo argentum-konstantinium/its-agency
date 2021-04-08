@@ -1,0 +1,28 @@
+* 
+    box-sizing: border-box
+    &::before, &::after
+        box-sizing: border-box
+    &:focus
+        outline: none
+    
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, button, input
+    margin: 0
+    padding: 0
+ul, ol
+    list-style: none
+button, a, span, label
+    font-weight: inherit
+    font-family: inherit
+    color: inherit
+    font-style: inherit
+    font-size: inherit
+
+button, input
+    border: none
+    background: none
+a
+    text-decoration: none
+    cursor: pointer
+button, input
+    &:not(:disabled)
+        cursor: pointer
