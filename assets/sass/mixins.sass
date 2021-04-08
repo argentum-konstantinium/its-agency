@@ -4,7 +4,7 @@
 
 @mixin dFlex($jc: flex-start, $ai: stretch, $fw: nowrap, $ac: normal)
     display: flex
-    justify-content: $jc 
+    justify-content: $jc
     align-items: $ai
     flex-wrap: $fw
     align-content: $ac
@@ -13,3 +13,12 @@
     font-size: $fs
     line-height: $lh
     font-weight: $fw
+@mixin invisibleCheckbox
+    width: 1px
+    height: 1px
+    position: absolute
+    clip: rect(0 0 0 0)
+    overflow: hidden
+    border: 0
+    padding: 0
+    margin: -1px

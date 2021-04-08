@@ -1,5 +1,5 @@
 <template>
-    <section class="promo-slider-section">
+  
         <Slider :options="options" :elemsClass="elemsClass">
             <slot slot="prev-btn">
                 <svg
@@ -28,9 +28,10 @@
                 >
                     <slot slot="content">
                         <div class="promo-slide__content">
-                            <h3 class="promo-slide__headline">
+                            <h2 class="promo-slide__headline">
                                 Краски {{ indexImg }}
-                            </h3>
+                            </h2>
+                             
                             <p class="promo-slide__descr">
                                 Идеально подходят для стен и других
                                 поверхностей. Найди свой идеальный цвет!
@@ -58,7 +59,7 @@
                 </svg>
             </slot>
         </Slider>
-    </section>
+ 
 </template>
 
 <script>

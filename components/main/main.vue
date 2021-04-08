@@ -1,12 +1,13 @@
 <template>
     <main class="main">
-        <PromoSlider></PromoSlider>
+        <section class="products">
+            <PromoSlider></PromoSlider>
+            <Aside></Aside>
+        </section>
     </main>
 </template>
 
 <script>
-export default {
-    
-};
+export default {};
 </script>
 

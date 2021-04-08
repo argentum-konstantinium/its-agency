@@ -40,7 +40,10 @@ export default {
       '~/components/common/slider',
       '~/components/header',
       '~/components/main',
-      '~/components/main/promo-slider'
+      '~/components/main/promo-slider',
+      '~/components/main/aside'
+
+
     ]
   },
 
