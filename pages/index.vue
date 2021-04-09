@@ -2,6 +2,8 @@
     <div class="">
         <Header></Header>
         <Main></Main>
+        <NuxtChild></NuxtChild>
+        <NuxtLink to="/cart">dick</NuxtLink>
     </div>
 </template>
 
@@ -9,6 +11,7 @@
  
  
 export default {
+    path: '/',
     mounted() {
         window.FocusVisible('data-focus-visible')
     }

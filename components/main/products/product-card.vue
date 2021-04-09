@@ -1,13 +1,13 @@
 <template>
     <div class="product-card">
         <div class="product-card__img-wrapp">
-            <img :src="img" :alt="name" class="product-card__img" />
+            <img :src="require('~/assets/img/products/' + productData.img)" :alt="productData.name" class="product-card__img" />
         </div>
         <div class="product-card__body">
-            <h3 class="product-card__name" v-html="name"></h3>
+            <h3 class="product-card__name" v-html="productData.name"></h3>
             <div class="product-card__footer">
-                <span class="product-card__cost" v-html="cost + ' ₽'"></span>
-                <button class="product-card__add-btn">
+                <span class="product-card__cost" v-html="productData.cost + ' ₽'"></span>
+                <button @click="sendAddEvent" class="product-card__add-btn">
                     <svg
                         class="product-card__add-icon"
                         width="20"
@@ -42,10 +42,21 @@
 <script>
 export default {
     props: {
-        name: String,
-        img: String,
-        cost: Number,
+        productData: {
+            type: Object,
+            default() {
+                return {};
+            },
+        }
     },
+    methods: {
+        sendAddEvent() {
+            this.$emit('addToCart', this.productData);
+        }
+    },
+    mounted() {
+         
+    }
 };
 </script>
 

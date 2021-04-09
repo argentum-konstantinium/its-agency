@@ -42,10 +42,8 @@ export default {
       '~/components/main',
       '~/components/main/promo-slider',
       '~/components/main/aside',
-      '~/components/main/products'
-
-
-
+      '~/components/main/products',
+      '~/components/cart'
     ]
   },
 

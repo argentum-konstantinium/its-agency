@@ -6,11 +6,10 @@
         <div class="products__wrapper">
             <ProductCard
                 class="products__products-card"
-                v-for="(item, index) in products"
+                v-for="(item, index) in PRODUCTS"
+                :product-data="item"
                 :key="index"
-                :name="item.name"
-                :img="require('~/assets/img/products/' + item.img)"
-                :cost="item.cost"
+                @addToCart="addToCart"
                 :class="borderClass"
             ></ProductCard>
         </div>
@@ -18,24 +17,25 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
 export default {
     data() {
         return {
-            products: fetch("./products.json").then((response) => {
-                response.json().then((data) => {
-                    let arr = [];
-                    for (let i in data) {
-                        arr.push(data[i]);
-                    }
-                    this.products = arr;
-                    this.productsLength = arr.length;
-                });
-            }),
             productsLength: 0,
         };
     },
-    metods: {},
+    methods: {
+        ...mapActions([
+            "GET_PRODUCTS_FROM_API",
+            'ADD_TO_CART'
+        ]),
+        addToCart(product) {
+            
+            this.ADD_TO_CART(product);
+        }
+    },
     computed: {
+        ...mapGetters(["PRODUCTS"]),
         borderClass() {
             return {
                 "product-card_border_active-1": this.productsLength % 5 === 1,
@@ -47,16 +47,20 @@ export default {
             };
         },
         productsNumber() {
-            
             let value = Math.abs(this.productsLength) % 100;
             let num = value % 10;
-            if (value > 10 && value < 20) return this.productsLength + ' товаров';
-            if (num > 1 && num < 5) return this.productsLength + ' товара';
-            if (num == 1) return this.productsLength + ' товар';
-            return this.productsLength + ' товаров';
+            if (value > 10 && value < 20)
+                return this.productsLength + " товаров";
+            if (num > 1 && num < 5) return this.productsLength + " товара";
+            if (num == 1) return this.productsLength + " товар";
+            return this.productsLength + " товаров";
         },
     },
-    mounted() {},
+    mounted() {
+        this.GET_PRODUCTS_FROM_API().then(
+            () => (this.productsLength = this.PRODUCTS.length)
+        );
+    },
 };
 </script>
 
@@ -70,7 +74,6 @@ body
         display: grid
         grid-template-columns: repeat(5, 19.1117%)
         justify-content: space-between
-    
- 
+
 @include productCardBorder
 </style>

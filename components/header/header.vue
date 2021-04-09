@@ -1,14 +1,17 @@
 <template>
     <header class="header">
+       
         <Logo class="header__logo"></Logo>
         <div class="header__wrapper">
             <Nav class="header__nav" :links="links"></Nav>
             <Contacts class="header__contacts"></Contacts>
-            <Menu class="header__menu"></Menu>
+            <Menu :cart-quantity="CART_LENGTH" class="header__menu"></Menu>
+            
         </div>
     </header>
 </template>
 <script>
+import {mapGetters} from "vuex";
 export default {
     data() {
         return {
@@ -36,6 +39,12 @@ export default {
             },
         };
     },
+    computed: {
+        ...mapGetters([
+            'CART_LENGTH',
+            'CART'
+        ])
+    }
 };
 </script>
 

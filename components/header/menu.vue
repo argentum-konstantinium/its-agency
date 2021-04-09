@@ -83,13 +83,22 @@
             aria-label="Корзина"
             class="menu__btn menu__btn_cart"
         >
-            <span title="Корзина; товаров: 4" role="img">4</span>
+            <span :title="'Корзина; товаров: ' + cartQuantity" role="img">{{cartQuantity}}</span>
         </button>
     </div>
 </template>
 
+<script>
+
+export default {
+    props: {
+        cartQuantity: Number
+    }
+}
+</script>
+
 <style lang="sass">
-@import '~/assets/sass/mixins.sass'
+ 
 .menu
     @include dFlex(flex-start, center)
     &__btn
