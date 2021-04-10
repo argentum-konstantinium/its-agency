@@ -9,7 +9,9 @@
             "availability": true,
             "contract": false,
             "exclusive": false,
-            "sale": true
+            "sale": true,
+            "popularity": 1,
+            "rating": 9
         },
         {
             "img": "prod-2.png",
@@ -20,7 +22,9 @@
             "availability": true,
             "contract": true,
             "exclusive": false,
-            "sale": true
+            "sale": true,
+            "popularity": 8,
+            "rating": 3
         },
         {
             "img": "prod-3.png",
@@ -31,7 +35,9 @@
             "availability": false,
             "contract": true,
             "exclusive": true,
-            "sale": false
+            "sale": false,
+            "popularity": 9,
+            "rating": 2
         },
         {
             "img": "prod-4.png",
@@ -42,7 +48,9 @@
             "availability": false,
             "contract": false,
             "exclusive": true,
-            "sale": true
+            "sale": true,
+            "popularity": 5,
+            "rating": 1
         },
         {
             "img": "prod-5.png",
@@ -53,7 +61,9 @@
             "availability": false,
             "contract": false,
             "exclusive": true,
-            "sale": false
+            "sale": false,
+            "popularity": 1,
+            "rating": 3
         },
         {
             "img": "prod-6.png",
@@ -64,7 +74,9 @@
             "availability": true,
             "contract": false,
             "exclusive": true,
-            "sale": false
+            "sale": false,
+            "popularity": 5,
+            "rating": 9
         },
         {
             "img": "prod-7.png",
@@ -75,7 +87,9 @@
             "availability": true,
             "contract": false,
             "exclusive": true,
-            "sale": false
+            "sale": false,
+            "popularity": 1,
+            "rating": 10
         },
         {
             "img": "prod-8.png",
@@ -86,7 +100,9 @@
             "availability": false,
             "contract": true,
             "exclusive": false,
-            "sale": false
+            "sale": false,
+            "popularity": 8,
+            "rating": 6
         },
         {
             "img": "prod-9.png",
@@ -97,7 +113,9 @@
             "availability": true,
             "contract": false,
             "exclusive": false,
-            "sale": true
+            "sale": true,
+            "popularity": 5,
+            "rating": 7
         },
         {
             "img": "prod-10.png",
@@ -108,7 +126,9 @@
             "availability": false,
             "contract": false,
             "exclusive": true,
-            "sale": false
+            "sale": false,
+            "popularity": 3,
+            "rating": 7
         },
         {
             "img": "prod-11.png",
@@ -119,7 +139,9 @@
             "availability": true,
             "contract": true,
             "exclusive": true,
-            "sale": true
+            "sale": true,
+            "popularity": 9,
+            "rating": 1
         },
         {
             "img": "prod-12.png",
@@ -130,7 +152,9 @@
             "availability": false,
             "contract": true,
             "exclusive": false,
-            "sale": true
+            "sale": true,
+            "popularity": 7,
+            "rating": 8
         },
         {
             "img": "prod-13.png",
@@ -141,7 +165,9 @@
             "availability": false,
             "contract": false,
             "exclusive": true,
-            "sale": true
+            "sale": true,
+            "popularity": 7,
+            "rating": 3
         },
         {
             "img": "prod-14.png",
@@ -152,7 +178,9 @@
             "availability": false,
             "contract": true,
             "exclusive": true,
-            "sale": true
+            "sale": true,
+            "popularity": 4,
+            "rating": 8
         },
         {
             "img": "prod-15.png",
@@ -163,7 +191,9 @@
             "availability": false,
             "contract": false,
             "exclusive": false,
-            "sale": true
+            "sale": true,
+            "popularity": 3,
+            "rating": 5
         }
     ]
 }

@@ -1,10 +1,11 @@
 <template>
     <div class="">
-        <Header></Header>
-        <Main></Main>
+        <TheHeader/>
+        <Main/>
         <div :class="{ cart_show: showCart }" class="cart">
             <NuxtChild></NuxtChild>
         </div>
+        <TheFooter/>
     </div>
 </template>
 
@@ -35,6 +36,7 @@ export default {
     mounted() {
         window.FocusVisible("data-focus-visible");
         this.GET_CART_FROM_STORAGE();
+        
     },
 };
 </script>

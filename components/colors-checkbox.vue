@@ -1,6 +1,6 @@
 <template>
-    <label class="checkbox-label" :class="labelClass">
-        <input class="checkbox-label__checkbox" :class="checkboxClass" type="checkbox" :value="value" :name="name">
+    <label  class="checkbox-label" :class="labelClass">
+        <input class="checkbox-label__checkbox" :class="checkboxClass" type="checkbox" @click="sendEvent"  :value="value" :name="name">
         <span class="checkbox-label__custom-elem checkbox-label__custom-elem_relative">
             <span class="checkbox-label__custom-elem checkbox-label__custom-elem_children"></span>
         </span>
@@ -16,6 +16,11 @@ export default {
         text: String,
         name: String,
         value: String,
+    }, 
+    methods: {
+        sendEvent(event) {
+            this.$emit('checkboxClick', { value: event.target.checked, name: event.target.name} )
+        }
     }
 }
 </script>

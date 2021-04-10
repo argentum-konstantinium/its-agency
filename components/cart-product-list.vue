@@ -7,14 +7,14 @@
             </button>
         </div>
         <ul v-if="CART_LENGTH > 0" class="product-list__list">
-            <ProductListItem
+            <CartProductListItem
                 class="product-list__item"
                 v-for="item in CART"
                 :key="item.index"
                 :product-data="item"
                 :quantity="item.quantity"
                 :removed="item.removed"
-            ></ProductListItem>
+            />
         </ul>
     </div>
 </template>

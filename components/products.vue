@@ -1,17 +1,21 @@
 <template>
     <div class="products__container">
-        <div class="products__header">
-            <span class="products__number" v-html="productsNumber"></span>
-        </div>
-        <div class="products__wrapper">
-            <ProductCard
-                class="products__products-card"
-                v-for="(item, index) in filteredProducts"
-                :product-data="item"
-                :key="index"
-                @addToCart="addToCart"
-                :class="borderClass"
-            ></ProductCard>
+        <Aside @filterClick="changeFilter" class="products__aside" />
+        <div class="products__content">
+            <div class="products__header">
+                <span class="products__number" v-html="productsNumber"></span>
+                <ProductsSelect />
+            </div>
+            <div class="products__wrapper">
+                <ProductsProductCard
+                    class="products__products-card"
+                    v-for="(item, index) in calculatedProducts"
+                    :product-data="item"
+                    :key="index"
+                    @addToCart="addToCart"
+                    :class="borderClass"
+                />
+            </div>
         </div>
     </div>
 </template>
@@ -22,11 +26,15 @@ export default {
     data() {
         return {
             products: [],
-            newestFiltering: true,
+            newestFiltering: false,
             availabilityFiltering: false,
             exclusivefiltering: false,
             contractFiltering: false,
-            saleFiltering: true,
+            saleFiltering: false,
+            costSortingHigh: false,
+            costSortingLow: false,
+            popularitySorting: false,
+            newestSorting: false,
         };
     },
     methods: {
@@ -38,10 +46,12 @@ export default {
             this.products = this.products.filter((elem) => {
                 return elem[filter];
             });
-           
         },
-        
+        changeFilter(event) {
+            this[event.name] = event.value;
+        }
     },
+
     computed: {
         ...mapGetters(["PRODUCTS"]),
         borderClass() {
@@ -61,9 +71,9 @@ export default {
                 return this.products.length + " товаров";
             if (num > 1 && num < 5) return this.products.length + " товара";
             if (num == 1) return this.products.length + " товар";
-            return (this.products.length + " товаров");
+            return this.products.length + " товаров";
         },
-        filteredProducts() {
+        calculatedProducts() {
             this.products = this.PRODUCTS.map((b, idx) =>
                 Object.assign({ index: idx }, b)
             );
@@ -89,6 +99,26 @@ export default {
                     this.filterBy("sale");
                 }
             }
+            if (this.costSortingHigh) {
+                this.products.sort((a, b) => {
+                    return b.cost - a.cost;
+                });
+            }
+            if (this.costSortingLow) {
+                this.products.sort((a, b) => {
+                    return a.cost - b.cost;
+                });
+            }
+            if (this.popularitySorting) {
+                this.products.sort((a, b) => {
+                    return b.popularity - a.popularity;
+                });
+            }
+            if (this.newestSorting) {
+                this.products.sort((a, b) => {
+                    return Number(b.newest) - Number(a.newest);
+                });
+            }
             return this.products;
         },
     },
@@ -102,12 +132,21 @@ export default {
 body
     padding-bottom: 50px
 .products
+    &__container
+        @include dFlex(space-between, stretch)
+        padding: 0 64px
+    &__aside
+        flex-basis: 200px
+    &__content
+        flex-basis: 77.495%
     &__header
         color: #1F2020
+        @include dFlex(space-between, center)
     &__wrapper
         display: grid
         grid-template-columns: repeat(5, 19.1117%)
         justify-content: space-between
+    
 
 @include productCardBorder
 </style>

@@ -34,18 +34,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '~/components/common',
-      '~/components/common/slider',
-      '~/components/header',
-      '~/components/main',
-      '~/components/main/promo-slider',
-      '~/components/main/aside',
-      '~/components/main/products',
-      '~/components/cart'
-    ]
-  },
+  components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [

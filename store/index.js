@@ -62,17 +62,19 @@ export const mutations = {
         }
         state.cartSum = 0;
     },
-    SET_CART_SUM: (state, product) => {
-        if (!product.removed) {
-            if ('quantity' in product) {
-                state.cartSum = product.cost * product.quantity;
-            } else {
-                state.cartSum += product.cost;
-            }
-            
+    SET_CART_SUM_SUB: (state, product) => {
+        state.cartSum -= product.cost;
+    }, 
+    SET_CART_SUM_ADD: (state, product) => {
+        state.cartSum += product.cost;
+    }, 
+    SET_CART_SUM_ON_REMOVE: (state, product) => {
+        if (product.removed) {
+            state.cartSum -= product.quantity * product.cost;
         } else {
-            state.cartSum -= product.cost * product.quantity;
+            state.cartSum += product.quantity * product.cost;
         }
+        
     }, 
     SET_CART_LENGTH: (state) => {
         state.cartLength = state.cart.length;
@@ -107,7 +109,8 @@ export const mutations = {
             state.cart =  JSON.parse(localStorage.cart);
             state.cartSum = Number(localStorage.cartSum);
         }
-    }
+    },
+     
 }
 
 export const actions = {
@@ -121,7 +124,7 @@ export const actions = {
     ADD_TO_CART({ commit }, product) {
         commit('PUSH_TO_CART', product);
         commit('SET_PRODUCT_REMOVED_STATUS_FALSE', product);
-        commit('SET_CART_SUM', product);
+        commit('SET_CART_SUM_ADD', product);
         commit('SET_CART_LENGTH');
         commit('SAVE_CART_TO_STORAGE');
 
@@ -129,26 +132,26 @@ export const actions = {
     SUB_PRODUCT_QUANTITY({ commit }, product) {
         commit('SET_PRODUCT_QUANTITY_SUB', product);
         commit('SET_CART_REFRESH_PRODUCT', product);
-        commit('SET_CART_SUM', product);
+        commit('SET_CART_SUM_SUB', product);
         commit('SAVE_CART_TO_STORAGE');
     },
     ADD_PRODUCT_QUANTITY({ commit }, product) {
         commit('SET_PRODUCT_QUANTITY_ADD', product);
         commit('SET_CART_REFRESH_PRODUCT', product);
-        commit('SET_CART_SUM', product);
+        commit('SET_CART_SUM_ADD', product);
         commit('SAVE_CART_TO_STORAGE');
     },
     ADD_PRODUCT_TO_REMOVE({ commit }, product) {
         commit('SET_PRODUCT_REMOVED_STATUS_TRUE', product);
         commit('SET_CART_REFRESH_PRODUCT', product);
-        commit('SET_CART_SUM', product);
+        commit('SET_CART_SUM_ON_REMOVE', product);
         commit('SET_REMOVE_LENGTH');
 
     },
     CANCEL_REMOVE({ commit }, product) {
         commit('SET_PRODUCT_REMOVED_STATUS_FALSE', product);
         commit('SET_CART_REFRESH_PRODUCT', product);
-        commit('SET_CART_SUM', product);
+        commit('SET_CART_SUM_ON_REMOVE', product);
         commit('SET_REMOVE_LENGTH');
 
     },
@@ -166,7 +169,8 @@ export const actions = {
     GET_CART_FROM_STORAGE({commit}) {
         commit("SET_CART_FROM_STORAGE");
         commit('SET_CART_LENGTH')
-    }
+    },
+     
 
 }
 

@@ -20,7 +20,7 @@
                 </svg>
             </slot>
             <slot slot="slides">
-                <PromoSlide
+                <PromoSliderSlide
                     v-for="(item, indexImg) in slidesImg"
                     :key="indexImg"
                     :src="require('~/assets/img/slider/' + item.img)"
@@ -38,7 +38,7 @@
                             </p>
                         </div>
                     </slot>
-                </PromoSlide>
+                </PromoSliderSlide>
             </slot>
             <slot slot="next-btn">
                 <svg

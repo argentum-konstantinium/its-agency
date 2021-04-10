@@ -3,9 +3,9 @@
        
         <Logo class="header__logo"></Logo>
         <div class="header__wrapper">
-            <Nav class="header__nav" :links="links"></Nav>
-            <Contacts class="header__contacts"></Contacts>
-            <Menu :cart-quantity="CART_LENGTH" class="header__menu"></Menu>
+            <HeaderNav class="header__nav" :links="links"></HeaderNav>
+            <HeaderContacts class="header__contacts"></HeaderContacts>
+            <HeaderMenu :cart-quantity="CART_LENGTH" class="header__menu"></HeaderMenu>
             
         </div>
     </header>
