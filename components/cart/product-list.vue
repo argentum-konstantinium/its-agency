@@ -19,12 +19,32 @@
     </div>
 </template>
 
+<style lang="sass">
+.product-list
+    &__header
+        @include dFlex(space-between, center)
+        font-size: 14px
+        color: #1F2020
+        padding-bottom: 0.71428em
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    &__number
+        @include fontCfg(1em, 112%, 400)
+    &__reset-cart
+        opacity: 0.4
+        transition: 0.2s opacity ease
+        &:hover
+            opacity: 1
+    &__list
+        overflow-y: auto
+        max-height: 484px
+</style>
+
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
     data() {
         return {
-            clearedCart: false,
+
         };
     },
     computed: {
@@ -42,14 +62,11 @@ export default {
         },
     },
     methods: {
-        ...mapActions(["REMOVE_ALL_PRODUCTS"]),
+        ...mapActions(["RESET_CART"]),
         clearCart() {
-            this.REMOVE_ALL_PRODUCTS();
+            this.RESET_CART();
         },
     },
-    mounted() {
-        
-
-    },
+     
 };
 </script>

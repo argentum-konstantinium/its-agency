@@ -51,7 +51,7 @@ export default {
     },
     methods: {
         sendAddEvent() {
-            this.$emit('addToCart', this.productData);
+            this.$emit('addToCart', Object.assign({},this.productData));
         }
     },
     mounted() {

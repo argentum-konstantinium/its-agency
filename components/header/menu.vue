@@ -79,26 +79,23 @@
                 />
             </svg>
         </button>
-        <button
-            aria-label="Корзина"
-            class="menu__btn menu__btn_cart"
-        >
-            <span :title="'Корзина; товаров: ' + cartQuantity" role="img">{{cartQuantity}}</span>
-        </button>
+        <NuxtLink class="menu__btn menu__btn_cart" :title="'Корзина; товаров: ' + cartQuantity " to="/cart">
+                <span  role="img">{{
+                    cartQuantity
+                }}</span> 
+        </NuxtLink>
     </div>
 </template>
 
 <script>
-
 export default {
     props: {
-        cartQuantity: Number
-    }
-}
+        cartQuantity: Number,
+    },
+};
 </script>
 
 <style lang="sass">
- 
 .menu
     @include dFlex(flex-start, center)
     &__btn
@@ -117,7 +114,7 @@ export default {
                 justify-content: center
                 width: 100%
                 height: 100%
-                
+
     &__icon
         @include fluidImg
 </style>

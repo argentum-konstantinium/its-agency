@@ -169,18 +169,13 @@ export default {
         quantity: Number,
         removed: false
     },
-    data() {
-        return {
-            thisRemoved: false,
-        };
-    },
     computed: {},
     methods: {
         ...mapActions([
             "SUB_PRODUCT_QUANTITY",
             "ADD_PRODUCT_QUANTITY",
             "ADD_PRODUCT_TO_REMOVE",
-            'REPEAT_REMOVE'
+            'CANCEL_REMOVE'
         ]),
         subQuantity() {
             if (this.quantity === 1) {
@@ -193,12 +188,12 @@ export default {
             this.ADD_PRODUCT_QUANTITY(this.productData);
         },
         thisRemove() {
-            this.thisRemoved = true;
+             
             this.ADD_PRODUCT_TO_REMOVE(this.productData);
         },
         thisRepeat() {
-            this.thisRemoved = false;
-            this.REPEAT_REMOVE(this.productData);
+          
+            this.CANCEL_REMOVE(this.productData);
         },
     },
     mounted() {},
@@ -211,8 +206,6 @@ export default {
     font-size: 16px
     padding-bottom: 0.75em
     padding-top: 0.75em
-    &:first-child
-        border-top: 1px solid rgba(0, 0, 0, 0.1)
     &:not(:last-child)
         border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 

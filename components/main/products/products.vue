@@ -6,7 +6,7 @@
         <div class="products__wrapper">
             <ProductCard
                 class="products__products-card"
-                v-for="(item, index) in PRODUCTS"
+                v-for="(item, index) in filteredProducts"
                 :product-data="item"
                 :key="index"
                 @addToCart="addToCart"
@@ -21,18 +21,26 @@ import { mapActions, mapGetters } from "vuex";
 export default {
     data() {
         return {
-            productsLength: 0,
+            products: [],
+            newestFiltering: true,
+            availabilityFiltering: false,
+            exclusivefiltering: false,
+            contractFiltering: false,
+            saleFiltering: true,
         };
     },
     methods: {
-        ...mapActions([
-            "GET_PRODUCTS_FROM_API",
-            'ADD_TO_CART'
-        ]),
+        ...mapActions(["GET_PRODUCTS_FROM_API", "ADD_TO_CART"]),
         addToCart(product) {
-            
             this.ADD_TO_CART(product);
-        }
+        },
+        filterBy(filter) {
+            this.products = this.products.filter((elem) => {
+                return elem[filter];
+            });
+           
+        },
+        
     },
     computed: {
         ...mapGetters(["PRODUCTS"]),
@@ -47,19 +55,45 @@ export default {
             };
         },
         productsNumber() {
-            let value = Math.abs(this.productsLength) % 100;
+            let value = Math.abs(this.products.length) % 100;
             let num = value % 10;
             if (value > 10 && value < 20)
-                return this.productsLength + " товаров";
-            if (num > 1 && num < 5) return this.productsLength + " товара";
-            if (num == 1) return this.productsLength + " товар";
-            return this.productsLength + " товаров";
+                return this.products.length + " товаров";
+            if (num > 1 && num < 5) return this.products.length + " товара";
+            if (num == 1) return this.products.length + " товар";
+            return (this.products.length + " товаров");
+        },
+        filteredProducts() {
+            this.products = this.PRODUCTS.map((b, idx) =>
+                Object.assign({ index: idx }, b)
+            );
+            if (
+                this.newestFiltering ||
+                this.exclusiveFiltering ||
+                this.contractFiltering ||
+                this.saleFiltering
+            ) {
+                if (this.newestFiltering) {
+                    this.filterBy("newest");
+                }
+                if (this.availabilityFiltering) {
+                    this.filterBy("availability");
+                }
+                if (this.exclusivefiltering) {
+                    this.filterBy("exclusive");
+                }
+                if (this.contractFiltering) {
+                    this.filterBy("contract");
+                }
+                if (this.saleFiltering) {
+                    this.filterBy("sale");
+                }
+            }
+            return this.products;
         },
     },
     mounted() {
-        this.GET_PRODUCTS_FROM_API().then(
-            () => (this.productsLength = this.PRODUCTS.length)
-        );
+        this.GET_PRODUCTS_FROM_API();
     },
 };
 </script>
