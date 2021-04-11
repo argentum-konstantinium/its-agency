@@ -66,6 +66,6 @@ export default {
     },
   },
   router: {
-    base: '/'
+    base: '/its-agency/dist'
   }
 }
