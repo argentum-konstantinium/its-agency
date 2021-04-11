@@ -1,6 +1,6 @@
 <template>
     <div class="cart__content">
-        <CartHeader/>
+        <CartHeader @click='resetCart'/>
         <CartBody/>
         <CartFooter :sum="CART_SUM" />
     </div>
@@ -12,12 +12,7 @@ export default {
     computed: {
         ...mapGetters(["CART_SUM"]),
     },
-    methods: {
-        ...mapActions(["REMOVE_ALL_PRODUCTS"]),
-        resetCart() {
-            this.REMOVE_ALL_PRODUCTS();
-        },
-    },
+    
 };
 </script>
 

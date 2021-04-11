@@ -85,6 +85,7 @@ export const mutations = {
     },
     SET_CART_REMOVE_PRODUCTS: (state) => {
         if (state.removeLength > 0) {
+            
             for (let i of state.products_to_remove) {
                 let index = state.cart.indexOf(i);
                 state.cart.splice(index, 1);
