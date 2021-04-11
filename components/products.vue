@@ -77,14 +77,14 @@ export default {
             document.body.classList.add("lock");
         },
         hideAside(e) {
-            if (e.target == e.ref) {
+            if (e.y < window.innerHeight / 2) {
                 this.toggleAsideState();
                 document.body.classList.remove("lock");
        
             }
         },
         hideAsideTouch() {
-           
+        
             this.toggleAsideState();
             document.body.classList.remove("lock");
         },

@@ -71,13 +71,13 @@ export default {
             this.$emit("filterClick", event);
         },
         clickSend(e) {
-            this.$emit("click", { target: e.target, ref: this.$el });
+              
+            this.$emit("click", { target: e.target, ref: this.$el, y: e.y });
         },
         startMoving(e) {
             this.activeMoving = true;
             this.cordY1 = window.innerHeight / 2 - e.targetTouches[0].clientY;
-            console.log(this.cordY1)
-            console.log(e)
+           
         },
         sendTouchEvent(e) {
             if (this.resultMovingCord > window.innerHeight * 0.75) {
