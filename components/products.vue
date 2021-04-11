@@ -208,6 +208,7 @@ export default {
     mounted() {
         this.GET_PRODUCTS_FROM_API();
         window.addEventListener("resize", this.setWindowWidth.bind(this), true);
+        this.setWindowWidth();
     },
 };
 </script>
@@ -219,6 +220,9 @@ body
     &__container
         @include dFlex(space-between, stretch)
         padding: 0 64px
+        max-width: 1920px
+        width: 100%
+        margin: 0 auto
     &__aside
         flex-basis: 200px
     &__content

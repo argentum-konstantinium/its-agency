@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <TheHeader />
         <Main />
         <div ref="cart" @click="closeCart" :class="{ cart_show: showCart }" class="cart">
