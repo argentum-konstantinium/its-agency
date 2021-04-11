@@ -17,9 +17,14 @@ export default {
     &__link
         display: block
         &_phone
-            @include fontCfg(16px, 100%, 500, -0.02em)
+            @include fontCfg(1em, 100%, 500, -0.02em)
         &_text
-            @include fontCfg(14px, 100%, 400)
+            @include fontCfg(0.875em, 100%, 400)
             opacity: 0.3
             margin-top: 0.14285em
+@media(max-width: 768px)
+    .contacts 
+        &__link
+            &:not(:last-child)
+                margin-bottom: 0.5em
 </style>

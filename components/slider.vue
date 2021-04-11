@@ -102,6 +102,7 @@ export default {
             default() {
                 return {
                     slider: "",
+                    destroyPoint: 0,
                     slides: {
                         common: "",
                         active: "",
@@ -135,8 +136,10 @@ export default {
             slideCenter: 0,
             slideWidth: 0,
             distance: 0,
+            windowWidth: 0,
             defaultOptions: {
                 autoplay: false,
+                destroyPoint: 0,
                 timout: 0,
                 easing: "linear",
                 speed: 400,
@@ -153,6 +156,15 @@ export default {
                 "slider__pagination-btn_active": n === activeSlide,
             };
         },
+    },
+    watch: {
+        destroyPoint: {
+            handler(newVal) {
+                if (newVal <= 768) {
+                    
+                }
+            }
+        }
     },
     methods: {
         paginationSwitch() {
@@ -315,6 +327,9 @@ export default {
         this.createSlides();
         if (this.sliderOptions.autoplay) this.startAutoplay();
     },
+    destroyed() {
+        this.stopAutoplay();
+    }
 };
 </script>
 

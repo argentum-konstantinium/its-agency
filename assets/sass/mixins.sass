@@ -25,8 +25,8 @@
     margin: -1px
 @mixin productCardBorder
     .product-card_border_active
-        @for $i from 1 through 5
-            &-#{$i}
-                &:nth-last-child(n+#{$i + 1})
-                    border-bottom: 1px rgba(0, 0, 0, 0.1) solid
-            
+        @for $i from 2 through 5
+            @for $a from 1 through $i
+                &-#{$i}_#{$a}
+                    &:nth-last-child(n+#{$a + 1})
+                        border-bottom: 1px rgba(0, 0, 0, 0.1) solid

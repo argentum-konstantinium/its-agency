@@ -2,7 +2,7 @@
     <div class="cart__footer">
         <div class="cart__sum">
             <span class="cart__sum-headline">Итого</span>
-            <span class="cart__sum-number" v-html="sumString"></span>
+            <span class="cart__sum-number" v-html="sumString + '₽'"></span>
         </div>
         <button :class="{'cart__checkout_disabled': sum === 0}" class="cart__checkout">Оформить заказ</button>
     </div>
@@ -51,5 +51,9 @@ export default {
         &_disabled
             pointer-events: none
             opacity: 0.5
+@media(max-width: 540px)
+    .cart
+        &__footer
+            font-size: 13px
 
 </style>

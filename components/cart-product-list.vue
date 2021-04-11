@@ -37,6 +37,9 @@
     &__list
         overflow-y: auto
         max-height: 484px
+@media(max-width: 540px)
+    .product-list__item
+        font-size: 12px
 </style>
 
 <script>

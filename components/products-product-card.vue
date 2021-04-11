@@ -73,8 +73,7 @@ export default {
 
     &__img
         @include fluidImg
-    &__body
-        padding: 0 1em
+    
     &__name
         @include fontCfg(1em, 112%, 300, 0.02em)
         margin-top: 1em
@@ -88,9 +87,13 @@ export default {
         border-radius: 8px
         padding: 6px 10px
         transition: background 0.2s ease-in-out
-        z-index: 1
         &:hover
             background: #7BB899
     &__add-icon
         @include fluidImg
+@media(max-width: 480px)
+    .product-card
+        &__add-btn
+            flex-basis: 40px
+            padding: 4px
 </style>

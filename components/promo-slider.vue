@@ -68,6 +68,7 @@ export default {
         return {
             options: {
                 autoplay: true,
+                destroyPoint: 768,
                 timeout: 3000,
                 speed: 700,
                 easing: "ease",
@@ -183,4 +184,15 @@ export default {
         max-width: 29.5em
         text-align: center
         @include fontCfg(0.222222em, 130%, 500, 0.02em)
+@media(max-width: 1280px)
+    .promo-slide
+        &__content
+            font-size: 55px
+@media(max-width: 990px)
+    .promo-slider
+        &__btn
+            &_next
+                right: 17%
+            &_prev
+                left: 17%
 </style>

@@ -1,11 +1,11 @@
 <template>
     <div class="">
-        <TheHeader/>
-        <Main/>
-        <div :class="{ cart_show: showCart }" class="cart">
+        <TheHeader />
+        <Main />
+        <div ref="cart" @click="closeCart" :class="{ cart_show: showCart }" class="cart">
             <NuxtChild></NuxtChild>
         </div>
-        <TheFooter/>
+        <TheFooter />
     </div>
 </template>
 
@@ -16,6 +16,7 @@ export default {
     data() {
         return {
             showCart: false,
+            
         };
     },
     watch: {
@@ -23,20 +24,27 @@ export default {
             immediate: true,
             handler(newRoute, oldRoute) {
                 if (newRoute.name === "index-cart") {
+                    document.body.classList.add('lock')
                     this.showCart = true;
                 } else {
                     this.showCart = false;
+                    document.body.classList.remove('lock')
+
                 }
             },
         },
     },
     methods: {
-        ...mapActions(['GET_CART_FROM_STORAGE'])
+        ...mapActions(["GET_CART_FROM_STORAGE"]),
+        closeCart(e) {
+            if (e.target == this.$refs.cart) {
+                this.$router.push('/')
+            }
+        }
     },
     mounted() {
         window.FocusVisible("data-focus-visible");
         this.GET_CART_FROM_STORAGE();
-        
     },
 };
 </script>
@@ -47,22 +55,22 @@ export default {
     position: fixed
     top: 0
     right: 0
-    width: 100%
-    height: 100%
+    width: 100vw
+    height: 100vh
+    min-height: 575px
     background: rgba(0,0,0, 0.2)
     @include dFlex(flex-end, stretch)
     opacity: 0
     display: none
-    z-index: 10
-    height: 100vh
-    min-height: 575px
+    z-index: 11
+  
     &_show
         display: flex
         animation: showOpacity 0.5s ease 1 forwards
-@keyframes showOpacity 
-    100% 
+@media(max-width: 768px)
+    .cart
+        min-height: 480px
+@keyframes showOpacity
+    100%
         opacity: 1
-    
-
-       
 </style>

@@ -106,8 +106,8 @@ export default {
             @include fontCfg(12px, 125%, 500)
             background: #7BB899
             border-radius: 50%
-            width: 2em
-            height: 2em
+            height: 20px
+            width: 20px
             span
                 display: inline-flex
                 align-items: center
@@ -117,4 +117,12 @@ export default {
 
     &__icon
         @include fluidImg
+@media(max-width: 1280px)
+    .menu 
+        &__btn
+         
+            &:not(:last-child)
+                margin-right: 12px
+         
+                
 </style>

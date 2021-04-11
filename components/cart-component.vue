@@ -42,4 +42,8 @@ export default {
         @include dFlex(center, center)
     &__body
         margin-top: calc(100vh * 0.07692)
+@media(max-width: 540px)
+    .cart
+        &__content
+            padding: 24px
 </style>

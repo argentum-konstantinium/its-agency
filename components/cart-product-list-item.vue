@@ -211,7 +211,6 @@ export default {
 
     &__img-wrapp
         width: 6em
-        height: 6em
     &__img
         @include fluidImg
     &__body
@@ -246,4 +245,17 @@ export default {
 
     &__control-icon
         @include fluidImg
+    &__number
+        display: flex
+        align-items: center
+    &__remove
+        margin-left: 16px
+@media(max-width: 540px)
+    
+    .product-item
+        &__control
+            flex-basis: 95px
+        &__text-content
+            flex-basis: 9em
+
 </style>
