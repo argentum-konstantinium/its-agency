@@ -66,6 +66,6 @@ export default {
     },
   },
   router: {
-    base: '/test-itagency/'
+    base: '/'
   }
 }
