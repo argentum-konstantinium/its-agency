@@ -64,7 +64,9 @@ export default {
         }
       }
     },
+    publicPath: '/resources/'
   },
+   
   router: {
     base: '/its-agency/dist'
   }

@@ -12,7 +12,6 @@
 <script>
 import { mapActions } from "vuex";
 export default {
-    path: "/",
     data() {
         return {
             showCart: false,
